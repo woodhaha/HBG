@@ -1,0 +1,50 @@
+from:   Desborough, Lane lane.desborough@medtronic.com
+to:	 Yasmin Lucero <yasmin.lucero@gmail.com>
+date:	 Tue, Aug 14, 2012 at 6:30 PM
+subject:	 RE: making contact
+mailed-by:	 medtronic.com
+
+Hi Yasmin,
+ 
+Great to hear you’re plugging away, can’t wait to see what you’ve done.
+ 
+Without knowing the specific situation, I’ll offer the following observations:
+1)      This data was originally collected for a different purpose, hence there may be issues when attempting long term trend analysis
+
+2)      The time stamp is based on a user-provided date and time during pump setup
+
+3)      The time stamp may not be perfectly aligned to PC time or Greenwich time
+
+4)      The time stamp may reflect daylight savings time changes (hence duplicates / gaps during time changes)
+
+5)      The time stamp may reflect time zone changes during travel (hence duplicates / gaps)
+
+6)      There may be redundant information in various columns (particularly meter blood glucose and insulin bolus); this is a reflection (perhaps a negative reflection) of the way data is captured and stored in the pump.  So for example the bolus wizard walks the user through a dialog and the results of this dialog are stored on one row.  Then the delivery algorithm starts delivering the bolus of insulin and this data is stored on another row, often with the same time stamp
+
+7)      When we work on this data ourselves, we often “bin” it into a time series with a sampling interval of 5 minutes.  This way we have a nice sparse rectangular matrix to work with in tools like Matlab.
+
+8)      There are rare instances where  I had to manually adjust the data (e.g. most of April 2012) and as a result there may be some periods where there are mistakes or gaps in the data due to human error
+
+9)      As you probably know from your own experiences, data is never clean or fully complete.  This being said, this dataset is the most clean and complete one I’ve ever seen for diabetes
+
+10)   For additional details on interpreting these results, check out the pump’s manual: http://minimed.com/pdf/x23_user_guide.pdf  
+
+11)   I’ve told a number of people at work how impressed I was about the speed with which you were able to load the data and start graphing it
+
+12)   Did you take a picture of my whiteboard scrawlings?  I forgot to take a picture, so I’m not sure what I said / forgot to say.  I’d be happy to provide additional examples / context.
+
+13)   Basically I'm interested in detecting patterns so they can be diagnosed and resolved. Lows (<80mg/dl) and highs (>180mg/dl) are of great importance.  Their causes can be a function of various things:
+
+a.       Past events like eating (carbs) and insulin 
+b.      Time of day
+c.       Day of week
+d.      System issues like fried insulin.  Or air in the line. Or wound healing. Or a kink or occlusion.  Or cannula gets pulled out. Or a combination. 
+e.      Illness
+f.        Gradual physiological changes like puberty or honeymoon period
+g.       Unmeasured inputs like stress or exercise (no, I don't have long term data for this unfortunately)
+ 
+I hope this helps.
+ 
+Regards,
+ 
+Lane
